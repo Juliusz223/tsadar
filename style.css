@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  background: radial-gradient(circle at 20% 30%, #d4efff, #a0d1ff, #6abfff);
+  background-attachment: fixed;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Punktowe gwiazdki */
+body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(#ffffff80 1px, transparent 1px),
+    radial-gradient(#ffffff60 1px, transparent 1px);
+  background-size: 80px 80px, 160px 160px;
+  background-position: 0 0, 40px 40px;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* Poświata z lewej */
+body::after {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  top: 10%;
+  left: -10%;
+  background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%);
+  filter: blur(80px);
+  opacity: 0.5;
+  pointer-events: none;
+}
